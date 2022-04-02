@@ -25,9 +25,9 @@
      showgrid="true"
      units="px"
      inkscape:zoom="1.5768481"
-     inkscape:cx="225.13265"
-     inkscape:cy="302.81927"
-     inkscape:current-layer="g1469">
+     inkscape:cx="225.13266"
+     inkscape:cy="302.50219"
+     inkscape:current-layer="layer2">
     <inkscape:grid
        type="xygrid"
        id="grid8980" />
@@ -35,11 +35,11 @@
   <defs
      id="defs8973" />
   <g
-     inkscape:label="staff"
+     inkscape:label="Main"
      id="layer1">
     <path
        style="fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 21.16667,25.135415 v 3.968751 l 9.260416,9.260416 18.520833,1e-6 1.322917,1.322917 v 9.260416 H 68.79167 L 68.791669,7.9374998 62.177086,1.3229165 H 60.85417 l -1e-6,17.1979165 -2.645832,2.645833 -10e-7,-19.8437495 H 56.88542 l -6.614583,6.6145833 -10e-7,13.2291662 -3.968749,3.96875 H 21.16667 v -1e-6"
+       d="m 33.07292,25.135415 v 3.968751 l 9.260416,9.260416 6.614583,1e-6 1.322917,1.322917 v 9.260416 H 68.79167 L 68.791669,7.9374998 62.177086,1.3229165 H 60.85417 l -1e-6,17.1979165 -2.645832,2.645833 -10e-7,-19.8437495 H 56.88542 l -6.614583,6.6145833 -10e-7,13.2291662 -3.968749,3.96875 H 33.07292 v -1e-6"
        id="path1414"
        sodipodi:nodetypes="ccccccccccccccccccc"
        inkscape:label="head" />
@@ -128,4 +128,8 @@
          inkscape:label="skirt-waist" />
     </g>
   </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Head" />
 </svg>
