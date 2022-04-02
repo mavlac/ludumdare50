@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1137"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="cat.svg"
+   sodipodi:docname="cat-main.svg"
    inkscape:export-filename="C:\Users\vlach\Dev\Unity\LD50\Assets\Graphics\cat-arm.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -65,7 +65,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Head-left"
-     style="display:inline">
+     style="display:none">
     <path
        style="display:inline;fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 19.84375,35.718754 v 2.645833 l 2.645833,2.645834 v -10e-7 l 6.614584,10e-7 -1e-6,5.291667 h 9.260418 V 27.781253 l -3.968751,-3.96875 h -1.322916 v 5.291668 h -6.614584 z"
