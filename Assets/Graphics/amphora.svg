@@ -46,7 +46,7 @@
        transform="scale(0.26458334)" />
     <path
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 10.583334,25.135416 -1.3229167,1.322916 1.3229167,1.322917 h 10.583334 l 1.322918,-1.322917 -1.322918,-1.322916 z"
+       d="m 9.2604176,23.8125 -1.322917,1.322916 -1.3229167,1.322917 H 18.520835 l 10e-7,-1.322917 -1.322918,-1.322916 z"
        id="path2210"
        inkscape:label="decoration"
        sodipodi:nodetypes="ccccccc" />
