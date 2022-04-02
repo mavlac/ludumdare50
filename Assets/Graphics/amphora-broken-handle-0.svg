@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="amphora.svg"
+   sodipodi:docname="amphora-broken-handle-0.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@
      sodipodi:nodetypes="ccccccccccc" />
   <path
      id="path825"
-     style="display:none;fill:#808080;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:label="Broken-handle-0"
      d="m 59.999999,54.999999 -10,-10 L 45,51 H 33 L 22,62 v 16 l 5,5 7.999999,6.999998 10,-9.999999 h 15 M 37,59 h 8 v 6 L 34,76 31,73 v -8 z"
      sodipodi:nodetypes="ccccccccccccccccc"
@@ -85,7 +85,7 @@
   <g
      inkscape:label="Default"
      id="layer1"
-     style="display:inline">
+     style="display:none">
     <path
        id="path44"
        style="fill:#808080;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"

@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="amphora.svg"
+   sodipodi:docname="amphora-broken-piece-2.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@
      sodipodi:nodetypes="ccccccccccc" />
   <path
      id="path3672"
-     style="display:none;fill:#808080;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:label="Broken-piece-2"
      d="m 64.999999,89.999999 -10,10.000001 -5,-2e-6 V 110 l 10,10 H 70 l -10e-7,-15 H 90 v -5 L 79.999998,89.999999 Z"
      transform="scale(0.26458334)"
@@ -85,7 +85,7 @@
   <g
      inkscape:label="Default"
      id="layer1"
-     style="display:inline">
+     style="display:none">
     <path
        id="path44"
        style="fill:#808080;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
