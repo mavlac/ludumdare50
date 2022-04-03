@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Amphora : MonoBehaviour
 {
+	public static bool IsPushedOverTableEdge { get; private set; }
+	public static bool IsCracked { get; private set; }
+
 	[SerializeField] private AudioSource audioSource;
 	[SerializeField] private AudioClip crackAudioClip;
 
@@ -23,9 +26,7 @@ public class Amphora : MonoBehaviour
 	[SerializeField] private Cat cat;
 
 	private Vector3 initialPosition;
-	bool isCracked = false;
 
-	public static bool IsPushedOverTableEdge { get; private set; }
 	public Vector3 CenterPosition => centerPivot.position;
 
 	public event Action Cracked;
@@ -35,7 +36,9 @@ public class Amphora : MonoBehaviour
 	{
 		brokenPieces.ForEach((brokenPiece) => brokenPiece.SetActive(false));
 		initialPosition = transform.position;
+
 		IsPushedOverTableEdge = false;
+		IsCracked = false;
 
 		defaultRigidbody.freezeRotation = true;
 	}
@@ -132,10 +135,10 @@ public class Amphora : MonoBehaviour
 
 	private void Crack()
 	{
-		if (isCracked)
+		if (IsCracked)
 			return;
 
-		isCracked = true;
+		IsCracked = true;
 
 		defaultShape.SetActive(false);
 		defaultRigidbody.isKinematic = true;

@@ -7,6 +7,8 @@ public class Cat : MonoBehaviour
 {
 	public const float PushDistance = 0.1575f;
 
+	public static bool IsPushAndMoveInProgress { get; private set; }
+
 	public enum PushPower { Low, Ideal, Harsh }
 
 	[SerializeField] private GameObject mainDefault;
@@ -29,6 +31,7 @@ public class Cat : MonoBehaviour
 	private void Awake()
 	{
 		initialPosition = transform.position;
+		IsPushAndMoveInProgress = false;
 	}
 
 	private void Start()
@@ -76,6 +79,8 @@ public class Cat : MonoBehaviour
 	}
 	IEnumerator PushAnimationCoroutine(PushPower pushPower)
 	{
+		IsPushAndMoveInProgress = true;
+
 		SetArmAction(1);
 		yield return new WaitForSeconds(0.25f);
 		SetArmAction(2);
@@ -88,7 +93,13 @@ public class Cat : MonoBehaviour
 			transform.DOMoveX(transform.position.x - PushDistance, 0.5f).SetEase(Ease.InOutCubic).OnComplete(() =>
 			{
 				BodySitting();
+				IsPushAndMoveInProgress = false;
 			});
+		}
+		else
+		{
+			yield return new WaitForSeconds(0.5f);
+			IsPushAndMoveInProgress = false;
 		}
 	}
 

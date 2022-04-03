@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Anup : MonoBehaviour
 {
+	public static bool IsRevertingActionOngoing { get; private set; }
+
 	[SerializeField] private Transform torso;
 	[SerializeField] private GameObject armDefault;
 	[SerializeField] private GameObject armAction0;
@@ -26,8 +28,6 @@ public class Anup : MonoBehaviour
 	[SerializeField] private Amphora amphora;
 
 	Coroutine openEyeForCoroutine;
-
-	public static bool IsRevertingActionOngoing { get; private set; }
 
 	private void Awake()
 	{
