@@ -665,9 +665,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1024181507}
-  pushLowAudioClip: {fileID: 0}
-  pushIdealAudioClip: {fileID: 0}
-  pushHarshAudioClip: {fileID: 0}
+  pushLowAudioClip: {fileID: 8300000, guid: 3e5433cff9dba6045ab5a539d4b2b779, type: 3}
+  pushIdealAudioClip: {fileID: 8300000, guid: ed6c0fa8f9066d14cabc6cf2467dcc18, type: 3}
+  pushHarshAudioClip: {fileID: 8300000, guid: fe3706c1660641c42a757d8d0cf0c645, type: 3}
 --- !u!1 &405669300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3888481672020999207, guid: f93d707ef470a3645b6b7b7a131cfdc3, type: 3}
@@ -7998,7 +7998,7 @@ MonoBehaviour:
   head: {fileID: 1846819226}
   openedEye: {fileID: 38791902}
   audioSource: {fileID: 1024181507}
-  revertActionMagicAudioClip: {fileID: 0}
+  revertActionMagicAudioClip: {fileID: 8300000, guid: 54220a718fd4b344e9500534f1cee9e1, type: 3}
   cat: {fileID: 400800156}
   amphora: {fileID: 1391061071}
 --- !u!1001 &1804553847

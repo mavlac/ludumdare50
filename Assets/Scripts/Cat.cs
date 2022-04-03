@@ -57,9 +57,10 @@ public class Cat : MonoBehaviour
 		switch(pushPower)
 		{
 			case PushPower.Low:
-				audioSource.PlayOneShot(pushLowAudioClip);
+				audioSource.PlayOneShot(pushIdealAudioClip);
 				break;
 			case PushPower.Ideal:
+				audioSource.PlayOneShot(pushLowAudioClip);
 				audioSource.PlayOneShot(pushIdealAudioClip);
 				break;
 			case PushPower.Harsh:
