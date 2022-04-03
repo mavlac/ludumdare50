@@ -664,6 +664,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41859eca53f80742a967b9a478e165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1024181507}
+  pushLowAudioClip: {fileID: 0}
+  pushIdealAudioClip: {fileID: 0}
+  pushHarshAudioClip: {fileID: 0}
 --- !u!1 &405669300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3888481672020999207, guid: f93d707ef470a3645b6b7b7a131cfdc3, type: 3}
@@ -1031,6 +1035,7 @@ GameObject:
   - component: {fileID: 575050705}
   - component: {fileID: 575050707}
   - component: {fileID: 575050706}
+  - component: {fileID: 575050708}
   m_Layer: 0
   m_Name: Magic
   m_TagString: Untagged
@@ -1208,7 +1213,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: Infinity
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2123,7 +2128,7 @@ ParticleSystem:
       repeatInterval: 1
       probability: 1
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -5890,6 +5895,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &575050708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575050704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0108146e98256504c8ce436b772db6a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  space: 0
+  rotationVector: {x: 0, y: 0, z: 50}
 --- !u!1 &601653629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7975,8 +7994,13 @@ MonoBehaviour:
   armDefault: {fileID: 904944773}
   armAction0: {fileID: 1624725452}
   armAction1: {fileID: 67708887}
+  magicParticles: {fileID: 575050707}
   head: {fileID: 1846819226}
   openedEye: {fileID: 38791902}
+  audioSource: {fileID: 1024181507}
+  revertActionMagicAudioClip: {fileID: 0}
+  cat: {fileID: 400800156}
+  amphora: {fileID: 1391061071}
 --- !u!1001 &1804553847
 PrefabInstance:
   m_ObjectHideFlags: 0

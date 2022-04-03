@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -18,6 +19,7 @@ public class Amphora : MonoBehaviour
 	[Space]
 	[SerializeField] private ParticleSystem crackParticleSystem;
 
+	private Vector3 initialPosition;
 	bool isCracked = false;
 
 	public event Action Cracked;
@@ -28,13 +30,12 @@ public class Amphora : MonoBehaviour
 	private void Awake()
 	{
 		brokenPieces.ForEach((brokenPiece) => brokenPiece.SetActive(false));
+		initialPosition = transform.position;
 	}
 
 	private void Update()
 	{
 #if UNITY_EDITOR
-		if (Input.GetKeyDown(KeyCode.P))
-			Push(Random.Range(0.1f, 0.5f));
 		if (Input.GetKeyDown(KeyCode.C))
 			Crack();
 #endif
@@ -48,8 +49,16 @@ public class Amphora : MonoBehaviour
 		}
 	}
 
+	public void ReturnToInitialPosition(float duration)
+	{
+		transform.DOMove(initialPosition, duration).SetEase(Ease.InOutCubic);
+	}
+
 	public void Push(float distance)
 	{
+		if (Anup.IsRevertingActionOngoing)
+			return;
+
 		defaultRigidbody.MovePosition(defaultRigidbody.position + Vector2.left * distance);
 	}
 

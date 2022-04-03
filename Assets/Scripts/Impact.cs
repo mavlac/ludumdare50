@@ -5,7 +5,7 @@ public class Impact : MonoBehaviour
 {
 	[SerializeField] private GameObject graphic;
 
-	[Space]
+	[Header("Scene Objects")]
 	[SerializeField] private Amphora amphora;
 
 	private void Awake()

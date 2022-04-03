@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 	[SerializeField] private AudioSource audioSource;
 	[SerializeField] private AudioClip goalAudioClip;
 
-	[Space]
+	[Header("Scene Objects")]
 	[SerializeField] private Amphora amphora;
 
 	private void Awake()
@@ -30,5 +30,10 @@ public class GameController : MonoBehaviour
 	private void OnAmphoraCracked()
 	{
 		audioSource.PlayOneShot(goalAudioClip);
+
+		if (Anup.IsRevertingActionOngoing)
+			return;
+
+		// TODO: Amphora cracked - game completed!
 	}
 }
