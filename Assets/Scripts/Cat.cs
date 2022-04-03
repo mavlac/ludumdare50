@@ -98,7 +98,7 @@ public class Cat : MonoBehaviour
 		}
 		else
 		{
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.1f);
 			IsPushAndMoveInProgress = false;
 		}
 	}
