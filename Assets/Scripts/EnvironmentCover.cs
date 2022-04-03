@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Assertions;
+using DG.Tweening;
 
 public class EnvironmentCover : MonoBehaviour
 {
@@ -32,7 +33,9 @@ public class EnvironmentCover : MonoBehaviour
 
 	public void Open()
 	{
-		// TODO: slide the cover out and disable when completed
-		spriteRenderer.enabled = false;
+		transform.DOMoveY(transform.position.y - 3f, 0.5f).SetEase(Ease.InCubic).OnComplete(() =>
+		{
+			spriteRenderer.enabled = false;
+		});
 	}
 }

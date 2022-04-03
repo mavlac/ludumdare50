@@ -65,7 +65,7 @@ public class Cat : MonoBehaviour
 
 	public void Push(PushPower pushPower)
 	{
-		Debug.Log("Cat push " + pushPower);
+		//Debug.Log("Cat push " + pushPower);
 
 		if (Anup.IsRevertingActionOngoing ||
 			Amphora.IsPushedOverTableEdge)
