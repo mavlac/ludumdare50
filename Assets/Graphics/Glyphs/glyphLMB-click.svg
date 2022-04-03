@@ -7,7 +7,7 @@
    viewBox="0 0 42.333334 31.750001"
    version="1.1"
    id="svg5"
-   sodipodi:docname="glyphLMB.svg"
+   sodipodi:docname="glyphLMB-click.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -58,7 +58,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="On"
-     style="display:none">
+     style="display:inline">
     <path
        style="display:inline;fill:#bfbfbf;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 30.427087,1.3229161 -3.96875,6e-7 -6.614583,5.9531252 1e-6,7.2760421 10.583334,-1e-6 -2e-6,-13.2291669"
@@ -66,7 +66,7 @@
        sodipodi:nodetypes="cccccc"
        inkscape:label="button" />
     <path
-       style="display:inline;fill:#bfbfbf;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="display:none;fill:#bfbfbf;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 2.6458334,5.2916668 v 3.9687501 l 5.2916668,5.2916681 v 2.645834 l -5.2916668,5.291666 v 3.968751 H 15.875001 V 22.489585 L 10.583334,17.197919 V 14.552085 L 15.875001,9.2604169 V 5.2916668 H 2.6458334"
        id="path868"
        sodipodi:nodetypes="ccccccccccccc"

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,11 +15,19 @@ public class GameController : MonoBehaviour
 
 	public static bool IsGameCompleted { get; private set; }
 
+	public event Action WelcomeDismissed;
+
 	private void Awake()
 	{
 		IsGameCompleted = false;
 
 		amphora.Cracked += OnAmphoraCracked;
+	}
+
+	private void Start()
+	{
+		// TODO: move to moment when user continues from some welcome screen
+		WelcomeDismissed?.Invoke();
 	}
 
 	private void OnDestroy()
