@@ -15,6 +15,9 @@ public class Anup : MonoBehaviour
 	[SerializeField] private GameObject openedEye;
 
 	[Space]
+	[SerializeField] private GlyphTalk glyphTalk;
+
+	[Space]
 	[SerializeField] private AudioSource audioSource;
 	[SerializeField] private AudioClip revertActionMagicAudioClip;
 
@@ -37,6 +40,7 @@ public class Anup : MonoBehaviour
 	private void Start()
 	{
 		cat.PushPerformed += OnCatPushed;
+		amphora.Cracked += OnAmphoraCracked;
 	}
 
 	private void Update()
@@ -50,6 +54,7 @@ public class Anup : MonoBehaviour
 	private void OnDestroy()
 	{
 		cat.PushPerformed -= OnCatPushed;
+		amphora.Cracked -= OnAmphoraCracked;
 	}
 
 	private void OnCatPushed(Cat.PushPower pushPower)
@@ -68,6 +73,11 @@ public class Anup : MonoBehaviour
 				InitiateRevertAction();
 				break;
 		}
+	}
+
+	private void OnAmphoraCracked()
+	{
+		glyphTalk.RandomTalk(6, 0.5f);
 	}
 
 	private void InitiateRevertAction()
@@ -93,6 +103,7 @@ public class Anup : MonoBehaviour
 		SetArmAction(2);
 
 		magicParticles.Play();
+		glyphTalk.RandomTalk(3);
 		audioSource.PlayOneShot(revertActionMagicAudioClip);
 		yield return new WaitForSeconds(0.25f);
 		cat.ReturnToInitialPosition(0.75f);

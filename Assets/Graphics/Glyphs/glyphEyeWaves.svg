@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="120"
+   height="120"
+   viewBox="0 0 31.75 31.750001"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="glyphEyeWaves.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     units="px"
+     inkscape:zoom="6.75"
+     inkscape:cx="78.962963"
+     inkscape:cy="67.333333"
+     inkscape:current-layer="layer1"
+     inkscape:snap-grids="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid888" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path937"
+       style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 30,10 10,30 V 40 L 30,60 H 90 L 110,40 V 30 L 90,10 Z m 5,10 H 85 L 100,35 85,50 H 35 L 20,35 Z"
+       transform="scale(0.26458334)" />
+    <path
+       style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 7.9374999,28.447612 3.9687501,-3.968751 3.96875,3.968751 3.96875,-3.968751 3.96875,3.968751 5.55625,-5.683643 -1.5875,-1.597299 -3.96875,3.96875 -3.96875,-3.96875 -3.96875,3.96875 -3.96875,-3.96875 -3.9687501,3.96875 -3.96875,-3.96875 -1.6903934,1.636497 z"
+       id="path2517"
+       sodipodi:nodetypes="ccccccccccccccc" />
+    <path
+       style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 14.552084,7.9375002 v 2.6458338 h 2.645833 V 7.9375002 h -2.645833"
+       id="path1181"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>
