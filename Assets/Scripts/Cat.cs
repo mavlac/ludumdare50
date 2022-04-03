@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
+	public const float PushIdealDistance = 0.15f;
+
 	public enum PushPower { Low, Ideal, Harsh }
+
+	[SerializeField] private GameObject mainDefault;
+	[SerializeField] private GameObject mainMove;
+	[SerializeField] private GameObject armPushing;
+	[SerializeField] private GameObject headLeft;
+	[SerializeField] private GameObject headFront;
 
 	[Space]
 	[SerializeField] private AudioSource audioSource;
@@ -44,7 +52,8 @@ public class Cat : MonoBehaviour
 	{
 		Debug.Log("Cat push " + pushPower);
 
-		if (Anup.IsRevertingActionOngoing)
+		if (Anup.IsRevertingActionOngoing ||
+			Amphora.IsPushedOverTableEdge)
 			return;
 
 		PlayPushAudio(pushPower);

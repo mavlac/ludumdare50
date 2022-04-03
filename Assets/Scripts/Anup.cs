@@ -131,6 +131,11 @@ public class Anup : MonoBehaviour
 		yield return new WaitForSeconds(preDelay);
 		TurnHead(true);
 		yield return new WaitForSeconds(duration - 0.25f);
+
+		// Dont turn back if Amphora has been broken
+		if (Amphora.IsPushedOverTableEdge)
+			yield break;
+
 		CloseEye();
 		yield return new WaitForSeconds(0.25f);
 		TurnHead(false);
