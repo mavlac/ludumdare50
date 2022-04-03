@@ -1,37 +1,38 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
 	[SerializeField] private AudioSource audioSource;
-	[SerializeField] private AudioClip goalAudioClip;
 
 	[Space]
 	[SerializeField] private ScreenFader screenFader;
 
+	[Space]
+	[SerializeField] private WelcomeScreen welcomeScreen;
+
 	[Header("Scene Objects")]
 	[SerializeField] private Amphora amphora;
+	[SerializeField] private GameObject raiseHint;
 
 	public static bool IsGameCompleted { get; private set; }
 
-	public event Action WelcomeDismissed;
+	public event Action GameCompleted;
 
 	private void Awake()
 	{
 		IsGameCompleted = false;
 
-		amphora.Cracked += OnAmphoraCracked;
-	}
+		welcomeScreen.Dismissed += OnWelcomeScreenDismissed;
 
-	private void Start()
-	{
-		// TODO: move to moment when user continues from some welcome screen
-		WelcomeDismissed?.Invoke();
+		amphora.Cracked += OnAmphoraCracked;
 	}
 
 	private void OnDestroy()
 	{
+		welcomeScreen.Dismissed -= OnWelcomeScreenDismissed; 
 		amphora.Cracked -= OnAmphoraCracked;
 	}
 
@@ -45,29 +46,24 @@ public class GameController : MonoBehaviour
 #endif
 	}
 
+	private void OnWelcomeScreenDismissed()
+	{
+
+	}
+
 	private void OnAmphoraCracked()
 	{
-		if (Anup.IsRevertingActionOngoing)
-			return;
-
 		GameGoalAchieved();
 	}
 
 	private void GameGoalAchieved()
 	{
-		audioSource.PlayOneShot(goalAudioClip);
+		raiseHint.SetActive(false);
 
 		IsGameCompleted = true;
 
-		// TODO: Amphora cracked - game completed!
-		// TODO: Some UI and on button StartOver
-	}
+		Debug.Log("Game Completed");
 
-	public void StartOver()
-	{
-		screenFader.FadeOut(() =>
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		});
+		GameCompleted?.Invoke();
 	}
 }

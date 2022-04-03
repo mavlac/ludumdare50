@@ -22,7 +22,8 @@ public class Raise : MonoBehaviour
 		!Amphora.IsCracked &&
 		!Cat.IsPushAndMoveInProgress &&
 		!ScreenFader.IsInProgress &&
-		!GameController.IsGameCompleted;
+		!GameController.IsGameCompleted &&
+		WelcomeScreen.IsDismissed;
 
 	private bool wasReadyToBegin;
 
@@ -43,7 +44,7 @@ public class Raise : MonoBehaviour
 	{
 		timeSinceActivation += Time.deltaTime;
 
-		if (IsReadyToBegin && !wasReadyToBegin)
+		if (IsReadyToBegin && !wasReadyToBegin && !GameController.IsGameCompleted)
 		{
 			ActivateReadyHint(true);
 		}
@@ -98,9 +99,9 @@ public class Raise : MonoBehaviour
 		IsReleasing = true;
 
 		var power = Cat.PushPower.Ideal;
-		if (NormalizedPushPower < 0.333f)
+		if (NormalizedPushPower < 0.4f)
 			power = Cat.PushPower.Low;
-		if (NormalizedPushPower > 0.666f)
+		if (NormalizedPushPower > 0.6f)
 			power = Cat.PushPower.Harsh;
 		cat.Push(power);
 		

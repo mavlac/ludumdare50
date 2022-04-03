@@ -4,7 +4,7 @@ using DG.Tweening;
 
 public class EnvironmentCover : MonoBehaviour
 {
-	[SerializeField] private GameController gameController;
+	[SerializeField] private WelcomeScreen welcomeScreen;
 
 	private SpriteRenderer spriteRenderer;
 	private Vector3 initialPosition;
@@ -13,17 +13,23 @@ public class EnvironmentCover : MonoBehaviour
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		Assert.IsNotNull(spriteRenderer);
-		Assert.IsNotNull(gameController);
+		Assert.IsNotNull(welcomeScreen);
 
 		initialPosition = transform.position;
 		spriteRenderer.enabled = true;
 
-		gameController.WelcomeDismissed += OnWelcomeDismissed;
+		welcomeScreen.Dismissed += OnWelcomeDismissed;
+	}
+
+	private void Start()
+	{
+		if (WelcomeScreen.IsDismissed)
+			spriteRenderer.enabled = false;
 	}
 
 	private void OnDestroy()
 	{
-		gameController.WelcomeDismissed -= OnWelcomeDismissed;
+		welcomeScreen.Dismissed -= OnWelcomeDismissed;
 	}
 
 	private void OnWelcomeDismissed()
@@ -33,7 +39,7 @@ public class EnvironmentCover : MonoBehaviour
 
 	public void Open()
 	{
-		transform.DOMoveY(transform.position.y - 3f, 0.5f).SetEase(Ease.InCubic).OnComplete(() =>
+		transform.DOMoveY(initialPosition.y - 3f, 0.5f).SetEase(Ease.InCubic).OnComplete(() =>
 		{
 			spriteRenderer.enabled = false;
 		});
