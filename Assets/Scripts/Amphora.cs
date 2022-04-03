@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Amphora : MonoBehaviour
 {
@@ -10,9 +9,9 @@ public class Amphora : MonoBehaviour
 	[SerializeField] private AudioClip crackAudioClip;
 
 	[Space]
+	[SerializeField] private Transform forcePositionPivot;
 	[SerializeField] private Transform centerPivot;
 	[SerializeField] private Rigidbody2D defaultRigidbody;
-	[SerializeField] private Collider2D defaultCollider;
 	[SerializeField] private GameObject defaultShape;
 	[SerializeField] private List<GameObject> brokenPieces;
 
@@ -57,6 +56,11 @@ public class Amphora : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.C))
 			Crack();
 #endif
+
+		if (CenterPosition.x < tableEdgePivot.position.x)
+		{
+			IsPushedOverTableEdge = true;
+		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -76,9 +80,6 @@ public class Amphora : MonoBehaviour
 
 	private void OnCatPushed(Cat.PushPower pushPower)
 	{
-		if (Anup.IsRevertingActionOngoing)
-			return;
-
 		switch (pushPower)
 		{
 			case Cat.PushPower.Low:
@@ -91,8 +92,7 @@ public class Amphora : MonoBehaviour
 				break;
 
 			case Cat.PushPower.Harsh:
-				HarshPush(); // TODO: check if not pushed harshly over table edge - in this case it's win
-				// TODO: also implement no magic in Anup
+				HarshPush(defaultRigidbody.position + Vector2.left * Cat.PushIdealDistance);
 				break;
 		}
 	}
@@ -105,21 +105,29 @@ public class Amphora : MonoBehaviour
 		});
 	}
 
-	private void Move(Vector2 position)
+	private void Move(Vector2 targetPosition)
 	{
-		defaultRigidbody.MovePosition(position);
-
-		if (position.x < tableEdgePivot.position.x)
+		if (targetPosition.x < tableEdgePivot.position.x)
 		{
 			defaultRigidbody.freezeRotation = false;
 			IsPushedOverTableEdge = true;
+			targetPosition += Vector2.left * 0.05f;
 		}
+		
+		defaultRigidbody.MovePosition(targetPosition);
 	}
 
-	private void HarshPush()
+	private void HarshPush(Vector2 targetPosition)
 	{
-		// TODO: Add terrible force to flip and wake up Anup
 		defaultRigidbody.freezeRotation = false;
+		
+		//if (targetPosition.x < tableEdgePivot.position.x)
+		//{
+		//	IsPushedOverTableEdge = true;
+		//}
+		
+		//defaultRigidbody.MovePosition(targetPosition);
+		defaultRigidbody.AddForceAtPosition(Vector2.left, forcePositionPivot.position, ForceMode2D.Impulse);
 	}
 
 	private void Crack()

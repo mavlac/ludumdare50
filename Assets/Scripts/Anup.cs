@@ -83,6 +83,11 @@ public class Anup : MonoBehaviour
 		yield return new WaitForSeconds(0.15f);
 		TurnTorso(true);
 		yield return new WaitForSeconds(0.25f);
+
+		// Nothing to revert already - pushed over the table
+		if (Amphora.IsPushedOverTableEdge)
+			yield break;
+
 		SetArmAction(1);
 		yield return new WaitForSeconds(0.25f);
 		SetArmAction(2);

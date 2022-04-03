@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-	public const float PushIdealDistance = 0.15f;
+	public const float PushIdealDistance = 0.1575f;
 
 	public enum PushPower { Low, Ideal, Harsh }
 
@@ -66,7 +66,7 @@ public class Cat : MonoBehaviour
 		switch(pushPower)
 		{
 			case PushPower.Low:
-				audioSource.PlayOneShot(pushIdealAudioClip);
+				audioSource.PlayOneShot(pushLowAudioClip);
 				break;
 			case PushPower.Ideal:
 				audioSource.PlayOneShot(pushLowAudioClip);
