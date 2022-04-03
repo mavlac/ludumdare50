@@ -24,10 +24,11 @@
      inkscape:document-units="px"
      showgrid="true"
      units="px"
-     inkscape:zoom="1.5768481"
-     inkscape:cx="88.784709"
-     inkscape:cy="352.91922"
-     inkscape:current-layer="svg8976">
+     inkscape:zoom="8"
+     inkscape:cx="111.25"
+     inkscape:cy="161.4375"
+     inkscape:current-layer="layer3"
+     inkscape:snap-grids="false">
     <inkscape:grid
        type="xygrid"
        id="grid8980" />
@@ -49,7 +50,7 @@
        id="path1181"
        style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        inkscape:label="staff-ankh"
-       d="M 90.000001,130 70,150 85,165 H 75 v 10 h 15 v 15 h 10 v -15 h 15 v -10 h -10 l 15,-15 -20,-20 z M 95,140 l 5,5 5,5 -10,10 -5,-5 -5,-5 z"
+       d="M 92.354261,127.64574 70,150 85,165 H 75 v 10 h 15 v 15 h 10 v -15 h 15 V 165 H 105 L 120,150 97.64574,127.64574 Z M 95,140 l 5,5 5,5 -10,10 -5,-5 -5,-5 z"
        transform="scale(0.26458333)"
        sodipodi:nodetypes="cccccccccccccccccccccc" />
   </g>

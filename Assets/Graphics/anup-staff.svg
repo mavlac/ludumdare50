@@ -24,10 +24,11 @@
      inkscape:document-units="px"
      showgrid="true"
      units="px"
-     inkscape:zoom="1.5768481"
-     inkscape:cx="142.05553"
-     inkscape:cy="271.11045"
-     inkscape:current-layer="svg8976">
+     inkscape:zoom="8"
+     inkscape:cx="111.25"
+     inkscape:cy="161.4375"
+     inkscape:current-layer="layer3"
+     inkscape:snap-grids="false">
     <inkscape:grid
        type="xygrid"
        id="grid8980" />
@@ -35,7 +36,6 @@
   <defs
      id="defs8973" />
   <g
-     inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Staff"
      style="display:inline">
@@ -50,12 +50,11 @@
        id="path1181"
        style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        inkscape:label="staff-ankh"
-       d="M 90.000001,130 70,150 85,165 H 75 v 10 h 15 v 15 h 10 v -15 h 15 v -10 h -10 l 15,-15 -20,-20 z M 95,140 l 5,5 5,5 -10,10 -5,-5 -5,-5 z"
+       d="M 92.354261,127.64574 70,150 85,165 H 75 v 10 h 15 v 15 h 10 v -15 h 15 V 165 H 105 L 120,150 97.64574,127.64574 Z M 95,140 l 5,5 5,5 -10,10 -5,-5 -5,-5 z"
        transform="scale(0.26458333)"
        sodipodi:nodetypes="cccccccccccccccccccccc" />
   </g>
   <g
-     inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Arm"
      style="display:none">
@@ -71,20 +70,22 @@
      id="layer1"
      style="display:none">
     <path
-       style="fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 35.718754,48.947916 h 47.624999 l 2.645834,2.645834 V 89.958333 L 80.69792,95.25 H 78.052086 V 63.499999 l -5.291666,5.291666 v 56.885415 h -15.875 v -2.64583 h 5.291663 l 2.645837,-2.64584 V 103.1875 l -7.9375,-7.937501 -2.645833,2.645833 v 27.781248 h -15.875 v -2.64583 h 5.291663 l 2.645837,-2.64584 V 95.249999 l -4e-6,-26.458332 -6.614583,-6.614584 h -3.96875 l -2.645829,-2.645834 v -7.9375 z"
+       style="display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 35.718754,48.947916 h 47.624999 l 2.645834,2.645834 V 89.958333 L 80.69792,95.25 H 78.052086 V 63.499999 l -5.291666,5.291666 v 56.885415 h -15.875 v -2.64583 h 5.291663 l 2.645837,-2.64584 V 103.1875 l -7.9375,-7.937501 -2.645833,2.645833 v 27.781248 h -15.875 v -2.64583 h 5.291663 l 2.645837,-2.64584 V 95.249999 l -4e-6,-26.458332 -6.614583,-6.614584 -3.96875,-3.96875 -2.645829,-2.645834 v -3.96875 z"
        id="path3414"
        sodipodi:nodetypes="cccccccccccccccccccccccccccc"
        inkscape:label="body" />
     <path
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 48.947916,48.947916 v 2.645833 H 70.114583 V 48.947916 H 48.947916"
        id="path8651"
        inkscape:label="necklace"
        sodipodi:nodetypes="ccccc" />
     <g
        id="g1469"
-       inkscape:label="skirt">
+       inkscape:label="skirt"
+       style="display:inline"
+       inkscape:groupmode="layer">
       <path
          style="display:inline;fill:#bfbfbf;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 46.302083,78.05208 22.489584,10e-7 3.96875,-3.96875 -10e-7,26.458309 H 46.302083 V 78.05208"
@@ -111,7 +112,8 @@
        inkscape:label="head" />
     <g
        id="g834"
-       inkscape:label="cap">
+       inkscape:label="cap"
+       inkscape:groupmode="layer">
       <path
          style="opacity:1;fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 68.791669,19.84375 9.260416,9.260416 v 19.84375 h -7.9375 V 55.5625 h -3.96875 V 38.364583 l 2.645833,-2.645833 z"
@@ -139,7 +141,6 @@
        sodipodi:nodetypes="ccccccc" />
   </g>
   <g
-     inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="Eye-opened"
      style="display:none">
