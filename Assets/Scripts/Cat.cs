@@ -1,16 +1,18 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-	public const float PushIdealDistance = 0.1575f;
+	public const float PushDistance = 0.1575f;
 
 	public enum PushPower { Low, Ideal, Harsh }
 
 	[SerializeField] private GameObject mainDefault;
 	[SerializeField] private GameObject mainMove;
-	[SerializeField] private GameObject armPushing;
+	[SerializeField] private GameObject armAction0;
+	[SerializeField] private GameObject armAction1;
 	[SerializeField] private GameObject headLeft;
 	[SerializeField] private GameObject headFront;
 
@@ -29,6 +31,12 @@ public class Cat : MonoBehaviour
 		initialPosition = transform.position;
 	}
 
+	private void Start()
+	{
+		LookLeft();
+		SetArmAction(0);
+	}
+
 	private void Update()
 	{
 #if UNITY_EDITOR
@@ -45,10 +53,14 @@ public class Cat : MonoBehaviour
 
 	public void ReturnToInitialPosition(float duration)
 	{
-		transform.DOMove(initialPosition, duration).SetEase(Ease.InOutCubic);
+		LookFront();
+		transform.DOMove(initialPosition, duration).SetEase(Ease.InOutCubic).OnComplete(() =>
+		{
+			LookLeft();
+		});
 	}
 
-	private void Push(PushPower pushPower)
+	public void Push(PushPower pushPower)
 	{
 		Debug.Log("Cat push " + pushPower);
 
@@ -59,6 +71,53 @@ public class Cat : MonoBehaviour
 		PlayPushAudio(pushPower);
 
 		PushPerformed?.Invoke(pushPower);
+
+		StartCoroutine(PushAnimationCoroutine(pushPower));
+	}
+	IEnumerator PushAnimationCoroutine(PushPower pushPower)
+	{
+		SetArmAction(1);
+		yield return new WaitForSeconds(0.25f);
+		SetArmAction(2);
+		yield return new WaitForSeconds(0.25f);
+		SetArmAction(0);
+
+		if (pushPower != PushPower.Low)
+		{
+			BodyMoving();
+			transform.DOMoveX(transform.position.x - PushDistance, 0.5f).SetEase(Ease.InOutCubic).OnComplete(() =>
+			{
+				BodySitting();
+			});
+		}
+	}
+
+	private void LookLeft()
+	{
+		headLeft.SetActive(true);
+		headFront.SetActive(false);
+	}
+	private void LookFront()
+	{
+		headLeft.SetActive(false);
+		headFront.SetActive(true);
+	}
+
+	private void BodySitting()
+	{
+		mainDefault.SetActive(true);
+		mainMove.SetActive(false);
+	}
+	private void BodyMoving()
+	{
+		mainDefault.SetActive(false);
+		mainMove.SetActive(true);
+	}
+
+	private void SetArmAction(int step)
+	{
+		armAction0.SetActive(step == 1);
+		armAction1.SetActive(step == 2);
 	}
 
 	private void PlayPushAudio(PushPower pushPower)

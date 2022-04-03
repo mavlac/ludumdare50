@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1137"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   sodipodi:docname="cat-main-move.svg"
+   sodipodi:docname="cat-arm-1.svg"
    inkscape:export-filename="C:\Users\vlach\Dev\Unity\LD50\Assets\Graphics\cat-arm.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -28,9 +28,9 @@
      showgrid="true"
      units="px"
      inkscape:zoom="4.5914801"
-     inkscape:cx="148.53598"
-     inkscape:cy="223.67515"
-     inkscape:current-layer="g837">
+     inkscape:cx="39.203045"
+     inkscape:cy="262.98709"
+     inkscape:current-layer="svg1137">
     <inkscape:grid
        type="xygrid"
        id="grid1198" />
@@ -101,7 +101,7 @@
      inkscape:label="Main-move"
      inkscape:groupmode="layer"
      id="g837"
-     style="display:inline">
+     style="display:none">
     <path
        style="display:inline;fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 38.364583,47.625003 2.645834,-2.645836 9.260415,3e-6 9.260417,10.583334 v 18.520833 l 2.645833,2.645833 v 2.645833 H 42.333333 V 76.72917 h 3.968748 V 66.145836 l -6.614581,-6.614585 -5.291668,5.291668 1e-6,11.906251 -2.645833,2.645833 -2.645833,10e-7 v -2.645833 l 1.322916,-1.322917 V 58.208338 l -3.968749,-3.96875 v -6.614585 h 2.645833 z"
@@ -116,13 +116,24 @@
        sodipodi:nodetypes="ccccccc" />
   </g>
   <g
-     inkscape:groupmode="layer"
+     id="g956"
+     inkscape:label="Arm-action-02"
+     style="display:inline"
+     transform="translate(3.3333334e-8,2.6458334)">
+    <path
+       style="display:inline;fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 34.395835,59.53125 -10.583333,10.583335 -1.322916,1.322916 -1.322916,-1.322916 1e-6,-2.645833 1.322915,-1.322917 7.9375,-7.9375 z"
+       id="path954"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:label="arm" />
+  </g>
+  <g
      id="layer3"
-     inkscape:label="Arm"
+     inkscape:label="Arm-action-01"
      style="display:none">
     <path
        style="display:inline;fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 34.395835,58.208333 -9.260416,9.260418 -6.614583,-10e-7 v -1.322915 l 1e-6,-1.322917 h 3.968749 l 7.9375,-7.9375 z"
+       d="m 33.072918,58.208333 -9.260416,9.260418 -5.291666,-10e-7 v -2.645832 l 1.322918,-1.322917 h 2.645832 l 6.614583,-6.614583 z"
        id="path943"
        sodipodi:nodetypes="cccccccc"
        inkscape:label="arm" />

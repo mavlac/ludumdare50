@@ -88,11 +88,11 @@ public class Amphora : MonoBehaviour
 
 			case Cat.PushPower.Ideal:
 				Klink();
-				Move(defaultRigidbody.position + Vector2.left * Cat.PushIdealDistance);
+				Move(defaultRigidbody.position + Vector2.left * Cat.PushDistance);
 				break;
 
 			case Cat.PushPower.Harsh:
-				HarshPush(defaultRigidbody.position + Vector2.left * Cat.PushIdealDistance);
+				HarshPush(defaultRigidbody.position + Vector2.left * Cat.PushDistance);
 				break;
 		}
 	}
