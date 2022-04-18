@@ -10,6 +10,10 @@ public class ScreenFader : MonoBehaviour
 	[SerializeField] private Image image;
 	[SerializeField] private float duration = 1f;
 
+	[SerializeField] private Color[] colors;
+
+	private float StepDuration => duration / colors.Length;
+
 	private void Start()
 	{
 		FadeIn();
@@ -17,40 +21,33 @@ public class ScreenFader : MonoBehaviour
 
 	public void FadeIn(Action OnCompleted = null)
 	{
-		image.color = image.color.WithAlpha(1f);
-		Fade(0f, OnCompleted);
+		Fade(true, OnCompleted);
 	}
 
 	public void FadeOut(Action OnCompleted = null)
 	{
-		Fade(1f, OnCompleted);
+		Fade(false, OnCompleted);
 	}
 
-	public void Fade(float targetAlpha, Action OnCompleted)
+	public void Fade(bool fadeIn, Action OnCompleted)
 	{
 		StopAllCoroutines();
-		StartCoroutine(FadeCoroutine(targetAlpha, OnCompleted));
+		StartCoroutine(FadeCoroutine(fadeIn, OnCompleted));
 	}
 
-	IEnumerator FadeCoroutine(float targetAlpha, Action OnCompleted)
+	IEnumerator FadeCoroutine(bool fadeIn, Action OnCompleted)
 	{
 		IsInProgress = true;
-
 		image.enabled = true;
-		float startAlpha = image.color.a;
-
-		for (float t = 0f; t < duration; t += Time.deltaTime)
+		
+		for (int step = 0; step < colors.Length; step++)
 		{
-			float alpha = Mathf.Lerp(startAlpha, targetAlpha, t / duration);
-			image.color = image.color.WithAlpha(alpha);
-			yield return null;
+			image.color = fadeIn ? colors[step] : colors[colors.Length - step - 1];
+			yield return new WaitForSeconds(StepDuration);
 		}
 
-		image.color = image.color.WithAlpha(targetAlpha);
-		if (targetAlpha == 0f)
-			image.enabled = false;
-
-		OnCompleted?.Invoke();
+		image.enabled = false;
 		IsInProgress = false;
+		OnCompleted?.Invoke();
 	}
 }

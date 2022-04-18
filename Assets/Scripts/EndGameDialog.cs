@@ -72,7 +72,7 @@ public class EndGameDialog : MonoBehaviour
 	}
 
 	IEnumerator StartOverCoroutine()
-    {
+	{
 		yield return new WaitForSeconds(0.1f);
 		replayButton.gameObject.SetActive(false);
 		glyphs.SetActive(false);
@@ -86,9 +86,9 @@ public class EndGameDialog : MonoBehaviour
 	}
 	private void StartOver()
 	{
-		screenFader.FadeOut(() =>
-		{
+		//screenFader.FadeOut(() =>
+		//{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		});
+		//});
 	}
 }

@@ -7765,7 +7765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7871556540511652807, guid: 16c5cdb810812d3409a709ce30ee00e3, type: 3}
       propertyPath: m_SortingOrder
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -7871556540511652807, guid: 16c5cdb810812d3409a709ce30ee00e3, type: 3}
       propertyPath: m_SortingLayerID
@@ -8784,7 +8784,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1832543958}
-  duration: 1
+  duration: 0.5
+  colors:
+  - {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
 --- !u!1001 &1233266802
 PrefabInstance:
   m_ObjectHideFlags: 0

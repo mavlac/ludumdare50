@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GlyphTalk : MonoBehaviour
 {
-	const float GlyphDuration = 0.5f;
+	const float GlyphDuration = 0.25f;
 
 	[SerializeField] private SpriteRenderer spriteRenderer;
 	[SerializeField] private List<Sprite> sprites;
+
+	private Sprite lastSprite = null;
 
 	private void Awake()
 	{
@@ -28,7 +30,11 @@ public class GlyphTalk : MonoBehaviour
 		
 		do
 		{
-			spriteRenderer.sprite = sprites.Random();
+			do
+			{
+				spriteRenderer.sprite = sprites.Random();
+			} while (spriteRenderer.sprite == lastSprite);
+			lastSprite = spriteRenderer.sprite;
 			glyphs--;
 			yield return new WaitForSeconds(GlyphDuration);
 		}
