@@ -22,6 +22,7 @@ public class Anup : MonoBehaviour
 	[Space]
 	[SerializeField] private AudioSource audioSource;
 	[SerializeField] private AudioClip revertActionMagicAudioClip;
+	[SerializeField] private AudioClip amphoraCrackMadAudioClip;
 
 	[Header("Scene Objects")]
 	[SerializeField] private Cat cat;
@@ -77,8 +78,15 @@ public class Anup : MonoBehaviour
 
 	private void OnAmphoraCracked()
 	{
-		glyphTalk.RandomTalk(6, 0.5f);
+		glyphTalk.RandomTalk(4, 0.5f);
+				
+		Invoke(nameof(DelayedMadAudioPlayback), 0.5f);
+    }
+	private void DelayedMadAudioPlayback()
+	{
+		audioSource.PlayOneShot(amphoraCrackMadAudioClip);
 	}
+
 
 	private void InitiateRevertAction()
 	{

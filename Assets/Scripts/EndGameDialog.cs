@@ -21,6 +21,8 @@ public class EndGameDialog : MonoBehaviour
 	[SerializeField] private GameObject glyphs;
 	[SerializeField] private GameObject bastet;
 
+	private Vector2 initialDialogSize;
+
 	private void Awake()
 	{
 		gameController.GameCompleted += OnGameCompleted;
@@ -46,7 +48,7 @@ public class EndGameDialog : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		audioSource.PlayOneShot(goalAudioClip);
 		dialog.SetActive(true);
-		var initialDialogSize = dialogRectTransform.sizeDelta;
+		initialDialogSize = dialogRectTransform.sizeDelta;
 		dialogRectTransform.sizeDelta = new Vector2(initialDialogSize.x, 12f);
 		yield return new WaitForSeconds(0.1f);
 		dialogRectTransform.sizeDelta = new Vector2(initialDialogSize.x, initialDialogSize.y * 0.5f);
@@ -66,9 +68,22 @@ public class EndGameDialog : MonoBehaviour
 
 		audioSource.PlayOneShot(buttonClickedAudioClip);
 
-		StartOver();
+		StartCoroutine(StartOverCoroutine());
 	}
 
+	IEnumerator StartOverCoroutine()
+    {
+		yield return new WaitForSeconds(0.1f);
+		replayButton.gameObject.SetActive(false);
+		glyphs.SetActive(false);
+		bastet.SetActive(false);
+		yield return new WaitForSeconds(0.25f);
+		dialogRectTransform.sizeDelta = new Vector2(initialDialogSize.x, initialDialogSize.y * 0.5f);
+		yield return new WaitForSeconds(0.1f);
+		dialog.SetActive(false);
+
+		StartOver();
+	}
 	private void StartOver()
 	{
 		screenFader.FadeOut(() =>

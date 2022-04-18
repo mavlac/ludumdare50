@@ -89,12 +89,20 @@ public class Cat : MonoBehaviour
 
 		if (pushPower != PushPower.Low)
 		{
-			BodyMoving();
-			transform.DOMoveX(transform.position.x - PushDistance, 0.5f).SetEase(Ease.InOutCubic).OnComplete(() =>
+			if (Amphora.IsPushedOverTableEdge)
 			{
-				BodySitting();
+				// All done, no need to move the cat further anymore
 				IsPushAndMoveInProgress = false;
-			});
+			}
+			else
+			{
+				BodyMoving();
+				transform.DOMoveX(transform.position.x - PushDistance, 0.5f).SetEase(Ease.InOutCubic).OnComplete(() =>
+				{
+					BodySitting();
+					IsPushAndMoveInProgress = false;
+				});
+			}
 		}
 		else
 		{

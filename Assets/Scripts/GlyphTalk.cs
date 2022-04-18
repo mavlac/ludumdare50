@@ -16,20 +16,23 @@ public class GlyphTalk : MonoBehaviour
 
 	public void RandomTalk(int glyphs, float preDelay = 0f)
 	{
-		spriteRenderer.enabled = true;
+		spriteRenderer.enabled = false;
 		StopAllCoroutines();
 		StartCoroutine(RandomTalkCoroutine(glyphs, preDelay));
 	}
 	IEnumerator RandomTalkCoroutine(int glyphs, float preDelay)
 	{
 		yield return new WaitForSeconds(preDelay);
-
+		
+		spriteRenderer.enabled = true;
+		
 		do
 		{
 			spriteRenderer.sprite = sprites.Random();
 			glyphs--;
 			yield return new WaitForSeconds(GlyphDuration);
-		} while (glyphs > 0);
+		}
+		while (glyphs > 0);
 
 		spriteRenderer.enabled = false;
 	}
