@@ -1,17 +1,21 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 using DG.Tweening;
+using System.Collections;
 
 public class EnvironmentCover : MonoBehaviour
 {
 	[SerializeField] private WelcomeScreen welcomeScreen;
 
-	private SpriteRenderer spriteRenderer;
+	[SerializeField] private int steps;
+	[SerializeField] private float duration;
+
+	[SerializeField] private SpriteRenderer spriteRenderer;
+
 	private Vector3 initialPosition;
 
 	private void Awake()
 	{
-		spriteRenderer = GetComponent<SpriteRenderer>();
 		Assert.IsNotNull(spriteRenderer);
 		Assert.IsNotNull(welcomeScreen);
 
@@ -24,7 +28,9 @@ public class EnvironmentCover : MonoBehaviour
 	private void Start()
 	{
 		if (WelcomeScreen.IsDismissed)
+		{
 			spriteRenderer.enabled = false;
+		}
 	}
 
 	private void OnDestroy()
@@ -34,14 +40,21 @@ public class EnvironmentCover : MonoBehaviour
 
 	private void OnWelcomeDismissed()
 	{
-		Open();
+		StopAllCoroutines();
+		StartCoroutine(OpenCoroutine());
 	}
 
-	public void Open()
+	IEnumerator OpenCoroutine()
 	{
-		transform.DOMoveY(initialPosition.y - 3f, 0.5f).SetEase(Ease.InCubic).OnComplete(() =>
+		var targetPosition = initialPosition + Vector3.down * 3f;
+
+		for (int i = 0; i < steps; i++)
 		{
-			spriteRenderer.enabled = false;
-		});
+			var position = Vector3.Lerp(initialPosition, targetPosition, Mathf.InverseLerp(0, steps, i));
+			transform.position = position;
+			yield return new WaitForSeconds(duration / steps);
+		}
+		
+		spriteRenderer.enabled = false;
 	}
 }

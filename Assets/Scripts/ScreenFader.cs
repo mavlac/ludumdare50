@@ -24,10 +24,10 @@ public class ScreenFader : MonoBehaviour
 		Fade(true, OnCompleted);
 	}
 
-	public void FadeOut(Action OnCompleted = null)
-	{
-		Fade(false, OnCompleted);
-	}
+	//public void FadeOut(Action OnCompleted = null)
+	//{
+	//	Fade(false, OnCompleted);
+	//}
 
 	public void Fade(bool fadeIn, Action OnCompleted)
 	{

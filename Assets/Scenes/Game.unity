@@ -6853,7 +6853,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589416789}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6886,7 +6886,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1231994095
   m_SortingLayer: 2
-  m_SortingOrder: 10
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 90a58f97d79146242a7cddaee398148f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6911,6 +6911,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   welcomeScreen: {fileID: 850455027}
+  steps: 4
+  duration: 0.5
+  spriteRenderer: {fileID: 589416791}
 --- !u!1 &601653629
 GameObject:
   m_ObjectHideFlags: 0
@@ -8784,9 +8787,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1832543958}
-  duration: 0.5
+  duration: 0.75
   colors:
-  - {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.20392157}
 --- !u!1001 &1233266802
 PrefabInstance:
   m_ObjectHideFlags: 0

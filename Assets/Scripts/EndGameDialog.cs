@@ -82,6 +82,8 @@ public class EndGameDialog : MonoBehaviour
 		yield return new WaitForSeconds(0.1f);
 		dialog.SetActive(false);
 
+		yield return new WaitForSeconds(0.5f);
+
 		StartOver();
 	}
 	private void StartOver()
