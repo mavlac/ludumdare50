@@ -11,6 +11,7 @@ public class WelcomeScreen : MonoBehaviour
 	
 	[Space]
 	[SerializeField] private Button playButton;
+	[SerializeField] private GameObject glyphs;
 
 	public static bool IsDismissed { get; private set; } = false;
 
@@ -22,6 +23,8 @@ public class WelcomeScreen : MonoBehaviour
 
 		if (IsDismissed)
 			Hide();
+		
+		glyphs.gameObject.SetActive(false);
 	}
 
 	private IEnumerator Start()
@@ -29,6 +32,10 @@ public class WelcomeScreen : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 		if (!IsDismissed)
 			musicAudioSource	.Play();
+
+		yield return new WaitForSeconds(0.5f);
+		if (!IsDismissed)
+			glyphs.gameObject.SetActive(true);
 	}
 
 	private void OnPlayButtonClicked()
@@ -48,5 +55,6 @@ public class WelcomeScreen : MonoBehaviour
 	private void Hide()
 	{
 		playButton.gameObject.SetActive(false);
+		glyphs.gameObject.SetActive(false);
 	}
 }
